@@ -115,7 +115,7 @@ class AssignmentsController < ApplicationController
   def show
     @no_pad = true
     @assignments = @course.assignments
-    authorize! :read, @course
+    #authorize! :read, @course
 
     respond_to do |format|
       format.html # showml.erb
@@ -127,7 +127,7 @@ class AssignmentsController < ApplicationController
   # B: http://henrik.nyh.se/2008/11/rails-jquery-sortables#comment-17220662 (model update code)
 
   def reposition
-    authorize! :reorder_assignments, @course
+    #authorize! :reorder_assignments, @course
 
     order = params[:assignment]
     Rails.logger.debug(order)
